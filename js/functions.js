@@ -15,17 +15,20 @@ var send = document.getElementById('send');
 var userSearch=document.getElementById('user-search');
 var userMessage=document.getElementById('user-message');
 
-send.addEventListener('click',(e) => {
+send.addEventListener('click', (e) => {
 	if (userSearch.value==="" || userMessage.value==="" ) {
 		alert("Please search a user and put in a message");
+		e.preventDefault();
 		
 
 	}
 	else {
 		alert("Your message has been sent");
+		e.preventDefault();
 	}
-
-		
+	
 	
 });
+
+
 

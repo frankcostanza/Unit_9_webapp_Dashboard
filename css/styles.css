@@ -56,7 +56,9 @@ box-sizing: border-box;
 display: flex;
 flex-direction: row;
 align-items: center;
+
 }
+
  
  
 .app-name {
@@ -70,7 +72,19 @@ height: 35px;
 width: 35px;
 padding: 10px 20px 10px 0px;
 margin-right: 15px;
-border-right: 1px solid blue
+border-right: 1px solid blue;
+position: relative;
+}
+
+.bell-icon:after {
+	content: "";
+	background-color: rgba(156, 236, 60, 0.7); 
+	width: 10px;
+	height: 10px;
+	position: absolute;
+    top: 8px;
+    right: 30px;
+    border-radius: 50%;
 }
  
 .your-image,
@@ -94,6 +108,12 @@ width:100px;
 height: 2000px;
 padding-top: 15px;
 position: absolute;
+
+width: 100%;
+height: 50px;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
 }
  
 .icon {
@@ -118,15 +138,8 @@ border-bottom: 2px solid #DCDCDC;
 }
  
 .dashboard {
-padding-left: 20px;
-background-color: white;
-position: absolute;
-padding-top: 20px;
-padding-bottom: 21px;
-padding-right: 70px;
-border-right: 2px solid #DCDCDC;
-border-bottom: 2px solid white;
-top:101px;
+
+display: none;
  
 }
 .searchbar {
@@ -137,7 +150,7 @@ margin: 0 auto;
 #alert-box {
 	background-color: #9B30FF;
 	width: 80%;
-	margin: 30px 0 30px 130px;
+	margin: 30px 0 30px 20px;
 	padding-top: 20px;
 	padding-left: 10px;
 	padding-bottom:20px;
@@ -170,9 +183,12 @@ height:128px;
  #close {
  	padding-left: 80px;
  	font-size: 1.4rem;
+ 	margin:auto;
+
+	text-align: right;
  }
 
- .close:after {
+ #close:after {
     content: 'x';
     display: inline-block;
     float: right;
@@ -187,7 +203,7 @@ height:128px;
 .chart-container-1,
 .chart-container-2,
 .chart-container-3 {
-padding-left: 130px;	
+padding-left: 20px;	
 position: relative;
 height: 100%;
 width:100%;
@@ -198,13 +214,13 @@ box-sizing: border-box;
 .chart-container-2,
 .chart-container-3 {
 	padding-top: 40px;
-	width:50%;
 	
 }
 
 .second-part {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	margin: 0 auto;
 }
 
 
@@ -214,7 +230,7 @@ box-sizing: border-box;
 .social-wrapper {
 	border-top:  1px solid rgba(192,192,192, 0.9);
 	border-bottom: 1px solid rgba(192,192,192, 0.9);
-	padding-left: 130px;	
+	padding-left: 20px;	
 	margin-top: 30px;
 
 
@@ -222,9 +238,10 @@ box-sizing: border-box;
 
 .social-media {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-around;
 	text-align: center;
+	margin-left: 170px;
 	width: 100%;
 
 }
@@ -279,17 +296,23 @@ box-sizing: border-box;
 /*MEMEBERS*/
 
 .user-tracker {
-	padding-left: 130px;
+	padding-right: 10px
+	padding-left: 20px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	border-bottom: 1px solid rgba(192,192,192, 0.9);
 }
 
-.new-members,
+.new-members
+	 {
+	width: 100%;
+	padding-bottom: 10px;
+}
+
 .message-User,
 .settings
 	 {
-	width: 45%;
+	width: 100%;
 	padding-right:45px;
 	border-right: 1px solid rgba(192,192,192, 0.9);
 	padding-bottom: 10px;
@@ -351,27 +374,24 @@ box-sizing: border-box;
 }
 
 .recent-activity {
-	width: 45%;
-	padding-left: 30px;
+	width: 100%;
+	
 
 }
 
 /*LAST PART*/
 
 .last-part {
-	padding-left: 130px;
+	padding-left: 20px;
+	padding-right: 10px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 }
 
-form {
-
-}
-
-.message-User{
-
-
+.message-User {
+	color: rgba(20,18,15, 0.7);
+	border-bottom: 20px;
 }
 
 .message-User input,
@@ -480,81 +500,87 @@ button {
 
 }
 
-@media  (max-width: 768px) {
+@media  (min-width: 768px) {
 
 .dashboard {
-	display: none;
+padding-left: 20px;
+background-color: white;
+position: absolute;
+padding-top: 20px;
+padding-bottom: 21px;
+padding-right: 70px;
+border-right: 2px solid #DCDCDC;
+border-bottom: 2px solid white;
+top:101px;
+	
 }
 
 #alert-box {
-	margin-left: 20px;
+	margin-left: 130px;
 }
 
 #close {
-	margin-left: 300px;
+	margin: auto;
+
 }
 
 .chart-container-1, 
 .chart-container-2, 
 .chart-container-3 {
-	padding-left:20px;
+	padding-left:130px;
 
 }
 
 .sidebar {
-	width: 100%;
-	height: 50px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+width:100px;
+height: 2000px;
+display: block;
 
 }
 
 
 
 .second-part {
-	flex-direction: column;
-	margin: 0 auto;
+	flex-direction: row;
+	margin: 0;
 }
 
-.chart-container-2 {
-	width: 100%;
-}
-
+.chart-container-2,
 .chart-container-3 {
-	width: 100%;
+	width: 50%;
 }
+
 
 .social-wrapper {
-	padding-left: 20px;
+	padding-left: 130px;
 }
 
 .social-media {
-	flex-direction: column;
-	margin-left: 170px;
+	flex-direction: row;
+	margin-left: 0;
 }
 
 .user-tracker {
-	flex-direction: column;
-	padding-right: 10px;
-	padding-left: 20px;
+	flex-direction: row;
+	padding-right: 0;
+	padding-left: 130px;
 }
 
 .new-members {
-	width: 100%;
-	padding-right: 0;
-	border-right: none;
+	width: 45%;
+	padding-right: 45px;
+	border-right: 1px solid rgba(192,192,192, 0.9);
 }
 
 .recent-activity {
 	width: 100%;
-	padding-left: 0;
+	padding-left: 30px;
 }
 
 .last-part {
-	flex-direction: column;
-	padding-right: 10px;
-	padding-left: 20px;
+	flex-direction: row;
+	padding-right: 0;
+	padding-left: 130px;
 
 }
 
@@ -564,7 +590,7 @@ button {
 }
 
 .message-User, .settings {
-	width:100%;
+	width:45%;
 }
 
 
